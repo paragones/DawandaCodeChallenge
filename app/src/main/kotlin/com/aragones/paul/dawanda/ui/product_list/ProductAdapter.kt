@@ -9,7 +9,6 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.aragones.paul.dawanda.R
 import com.aragones.paul.dawanda.image.IImageLoader
-import com.aragones.paul.dawanda.models.Category
 import com.aragones.paul.dawanda.models.Product
 
 class ProductAdapter(private val products: List<Product>,
@@ -22,14 +21,17 @@ class ProductAdapter(private val products: List<Product>,
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val cardView: RelativeLayout = view.findViewById(R.id.card_view)
+        val productLayout: RelativeLayout = view.findViewById(R.id.rl_product)
         val productTitle: TextView = view.findViewById(R.id.product_title)
         val price: TextView = view.findViewById(R.id.price)
-        val imageBackground: ImageView = view.findViewById(R.id.image_background)
+        val productImage: ImageView = view.findViewById(R.id.product_image)
+        val sellerLayout: RelativeLayout = view.findViewById(R.id.rl_seller)
+        val sellerName: TextView = view.findViewById(R.id.seller_name)
+        val sellerImage: ImageView = view.findViewById(R.id.seller_image)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.categoryTitle.text = categories[position].name
+        holder.productTitle.text = products[position].name
         imageLoader.loadInto(categories[position].imageUrl, holder.imageBackground)
         holder.cardView.setOnClickListener {
             openProductListActivity(categories[position].id)
