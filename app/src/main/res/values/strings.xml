@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Dawanda</string>
+    <string name="error_message">Sorry there was an error loading the items. Please try again later</string>
+    <string name="category_section">Category Section</string>
+</resources>
