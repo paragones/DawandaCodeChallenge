@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
@@ -18,7 +18,11 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shadow">
+        android:background="@drawable/shadow"
+        android:padding="0dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp">
 
         <RelativeLayout
             android:id="@+id/rl_product"
@@ -26,10 +30,16 @@
             android:layout_height="wrap_content"
             android:foreground="?android:attr/selectableItemBackground"
             android:orientation="vertical"
-            android:padding="0dp"
-            card_view:cardCornerRadius="0dp"
-            card_view:cardElevation="0dp"
-            card_view:cardMaxElevation="0dp">
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/alert_dark_frame"
+                />
 
             <ImageView
                 android:layout_width="35dp"
@@ -38,19 +48,12 @@
                 android:layout_margin="10dp"
                 android:src="@drawable/heart" />
 
-            <ImageView
-                android:id="@+id/product_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@android:drawable/alert_dark_frame" />
 
             <TextView
                 android:id="@+id/product_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/image_background"
+                android:layout_below="@id/product_image"
                 android:layout_margin="10dp"
                 android:maxLines="2"
                 android:text="test"
@@ -81,17 +84,23 @@
             android:layout_height="wrap_content"
             android:foreground="?android:attr/selectableItemBackground"
             android:orientation="vertical"
+            android:layout_marginTop="5dp"
             android:padding="0dp"
-            card_view:cardCornerRadius="0dp"
-            card_view:cardElevation="0dp"
-            card_view:cardMaxElevation="0dp">
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
+            android:visibility="gone">
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/seller_image"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/icon" />
+                android:scaleType="fitXY"
+                app:riv_corner_radius="30dip"
+                app:riv_mutate_background="true"
+                app:riv_oval="true"
+                android:background="@drawable/icon" />
 
             <TextView
                 android:id="@+id/by"

@@ -5,6 +5,4 @@ import android.widget.ImageView
 
 interface IImageLoader {
     fun loadInto(uri: Uri, view: ImageView)
-
-    fun loadInto(resId: Int, view: ImageView)
 }

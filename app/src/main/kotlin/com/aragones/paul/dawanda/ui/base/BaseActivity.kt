@@ -1,6 +1,7 @@
 package com.aragones.paul.dawanda.ui.base
 
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import com.aragones.paul.dawanda.component.ActivitiesComponent
 import com.aragones.paul.dawanda.component.DaggerActivitiesComponent
 import com.aragones.paul.dawanda.modules.*
@@ -24,7 +25,10 @@ abstract class BaseActivity: AppCompatActivity() {
                 .build()
     }
 
-//    companion object {
-//        lateinit var activitiesComponent: ActivitiesComponent
-//    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

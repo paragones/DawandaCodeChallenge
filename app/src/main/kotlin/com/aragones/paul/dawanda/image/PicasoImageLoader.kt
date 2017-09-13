@@ -13,8 +13,4 @@ class PicasoImageLoader(context: Context) : IImageLoader {
                 .into(view)
     }
 
-    override fun loadInto(resId: Int, view: ImageView) {
-        picasso.load(resId)
-                .into(view)
-    }
 }

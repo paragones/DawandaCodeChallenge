@@ -16,7 +16,7 @@ import com.aragones.paul.dawanda.models.Category
 
 class MainAdapter(private val categories: List<Category>,
                   private val imageLoader: IImageLoader,
-                  private val openProductListActivity: (categoryId: Int) -> Unit) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+                  private val openProductListActivity: (categoryId: Int, categoryName:String) -> Unit) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context)
@@ -33,7 +33,7 @@ class MainAdapter(private val categories: List<Category>,
         holder.categoryTitle.text = categories[position].name
         imageLoader.loadInto(categories[position].imageUrl, holder.imageBackground)
         holder.cardView.setOnClickListener {
-            openProductListActivity(categories[position].id)
+            openProductListActivity(categories[position].id, categories[position].name)
         }
     }
 

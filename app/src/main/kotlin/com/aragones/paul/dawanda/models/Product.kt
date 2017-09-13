@@ -2,6 +2,7 @@ package com.aragones.paul.dawanda.models
 
 import android.net.Uri
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 /**
  * DawandaCodeChallenge
@@ -26,4 +27,4 @@ data class Product(@SerializedName("id") val id: Long,
                    @SerializedName("default_image") val productImage: ProductImage,
                    @SerializedName("pinned") val pinned: Boolean,
                    @SerializedName("customizable") val customizable: Boolean,
-                   @SerializedName("campaigned") val campaigned: Boolean)
+                   @SerializedName("campaigned") val campaigned: Boolean) : Serializable

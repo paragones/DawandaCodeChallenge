@@ -116,5 +116,6 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.twotoasters.jazzylistview:library:1.2.1'
     compile 'com.twotoasters.jazzylistview:library-recyclerview:1.2.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     provided 'javax.annotation:javax.annotation-api:1.2'
 }
