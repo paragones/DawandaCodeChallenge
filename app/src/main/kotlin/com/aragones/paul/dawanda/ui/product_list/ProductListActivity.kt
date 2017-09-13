@@ -63,7 +63,7 @@ class ProductListActivity : BaseActivity(), ProductListView {
     }
 
     private fun openProductDetailActivity(product: Product) {
-        startActivity(ProductDetailActivity.intent(this, product))
+//        startActivity(ProductDetailActivity.intent(this, product))
     }
 
     override fun displayError() {
