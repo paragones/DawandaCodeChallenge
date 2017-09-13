@@ -73,8 +73,4 @@ class MainActivity : BaseActivity(), MainView {
         super.onDestroy()
         presenter.detach()
     }
-
-//    companion object {
-//        lateinit var activitiesComponent: ActivitiesComponent
-//    }
 }
