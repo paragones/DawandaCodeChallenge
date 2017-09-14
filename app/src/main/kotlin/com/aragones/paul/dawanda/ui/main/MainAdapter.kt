@@ -22,9 +22,9 @@ class MainAdapter(private val categories: List<Category>,
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val cardView: RelativeLayout = view.findViewById(R.id.card_view)
-        val categoryTitle: TextView = view.findViewById(R.id.category_title)
-        val imageBackground: ImageView = view.findViewById(R.id.image_background)
+        val cardView: RelativeLayout = view.findViewById(R.id.card_view) as RelativeLayout
+        val categoryTitle: TextView = view.findViewById(R.id.category_title) as TextView
+        val imageBackground: ImageView = view.findViewById(R.id.image_background) as ImageView
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

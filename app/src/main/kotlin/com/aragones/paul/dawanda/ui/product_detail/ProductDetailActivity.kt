@@ -5,12 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 
 import com.aragones.paul.dawanda.R
+import com.aragones.paul.dawanda.extension.concatenateAlphaAnimations
 import com.aragones.paul.dawanda.extension.visible
 import com.aragones.paul.dawanda.image.ImageLoader
 import com.aragones.paul.dawanda.models.Product
 import com.aragones.paul.dawanda.ui.base.BaseActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_product_detail.*
+import kotlinx.android.synthetic.main.product_view.*
 import javax.inject.Inject
 
 class ProductDetailActivity : BaseActivity() {
@@ -50,6 +52,9 @@ class ProductDetailActivity : BaseActivity() {
         sellerName.text = product.seller.username
         shopName.text = product.shop.title
         rating.text = getString(R.string.rating, product.seller.rating)
+
+        concatenateAlphaAnimations(mutableListOf(badge, productName, priceView, sellerImage, sellerName,
+                shopName, rating, buttonBasket, uniqueView, priceView), 100, 1f)
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {

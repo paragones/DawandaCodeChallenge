@@ -24,13 +24,13 @@ class ProductAdapter(private val products: List<Product>,
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val productLayout: RelativeLayout = view.findViewById(R.id.rl_product)
-        val productTitle: TextView = view.findViewById(R.id.product_title)
-        val price: TextView = view.findViewById(R.id.price)
-        val productImage: ImageView = view.findViewById(R.id.product_image)
-        val sellerLayout: RelativeLayout = view.findViewById(R.id.rl_seller)
-        val sellerName: TextView = view.findViewById(R.id.seller_name)
-        val sellerImage: RoundedImageView = view.findViewById(R.id.seller_image)
+        val productLayout: RelativeLayout = view.findViewById(R.id.rl_product) as RelativeLayout
+        val productTitle: TextView = view.findViewById(R.id.product_title) as TextView
+        val price: TextView = view.findViewById(R.id.price) as TextView
+        val productImage: ImageView = view.findViewById(R.id.product_image) as ImageView
+        val sellerLayout: RelativeLayout = view.findViewById(R.id.rl_seller) as RelativeLayout
+        val sellerName: TextView = view.findViewById(R.id.seller_name) as TextView
+        val sellerImage: RoundedImageView = view.findViewById(R.id.seller_image) as RoundedImageView
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
