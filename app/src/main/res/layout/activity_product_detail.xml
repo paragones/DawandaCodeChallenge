@@ -1,9 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.aragones.paul.dawanda.ui.product_detail.ProductDetailActivity">
+    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/image_description"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/alert_dark_frame" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/heart" />
+
+        <jp.shts.android.library.TriangleLabelView
+            android:id="@+id/badge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            app:backgroundColor="@android:color/darker_gray"
+            app:corner="leftTop"
+            app:labelBottomPadding="5dp"
+            app:labelCenterPadding="15dp"
+            app:labelTopPadding="10dp"
+            app:primaryText="New"
+            app:primaryTextColor="@android:color/white"
+            app:primaryTextSize="16sp"/>
+
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productImage"
+            android:layout_marginLeft="16dp"
+            android:maxLines="2"
+            android:text="@string/product_name"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/priceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/productName"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/price" />
+
+        <TextView
+            android:id="@+id/uniqueView"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/priceView"
+            android:layout_marginLeft="16dp"
+            android:maxLines="2"
+            android:text="@string/unique_view" />
+
+        <Button
+            android:id="@+id/buttonBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/priceView"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/rounded_corner"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/add_to_basket"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <View
+            android:id="@+id/graybar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/buttonBasket"
+            android:background="@android:color/darker_gray" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/sellerImage"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/graybar"
+            android:layout_margin="15dp"
+            android:background="@drawable/heart" />
+
+        <TextView
+            android:id="@+id/sellerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/graybar"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/sellerImage"
+            android:text="@string/seller_name"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/shopName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sellerName"
+            android:layout_toRightOf="@id/sellerImage"
+            android:text="@string/shop_name"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/buttonBasket"
+            android:layout_below="@id/graybar"
+            android:layout_marginTop="15dp"
+            android:text="@string/rating"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</ScrollView>

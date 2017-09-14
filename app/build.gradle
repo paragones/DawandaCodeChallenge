@@ -81,9 +81,6 @@ dependencies {
     compile rootProject.ext.rxAndroid
     compile "com.google.dagger:dagger:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-    compile "com.squareup.okhttp3:okhttp:$okHttpVersion"
-    compile "com.squareup.okhttp3:okhttp-urlconnection:$okHttpVersion"
-    compile "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
     compile "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
     compile("com.squareup.retrofit2:retrofit:$retrofitVersion") {
         exclude module: 'okhttp'
@@ -91,24 +88,13 @@ dependencies {
     compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     compile rootProject.ext.kotlinStdlib
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
-
-    androidTestCompile "com.android.support:support-annotations:$androidSupportVersion"
-    androidTestCompile rootProject.ext.supportTestRunner
-
-    testCompile "com.squareup.okhttp3:mockwebserver:$okHttpVersion"
-    testCompile rootProject.ext.junit
-    testCompile rootProject.ext.mockito
-    testCompile "com.google.dagger:dagger:$daggerVersion"
-    testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
-    kaptTest "com.google.dagger:dagger-compiler:$daggerVersion"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "io.vrinda.kotlinpermissions:kotlinpermissions:$kotlinPermissionsVersion"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.android.support:support-v4:25.3.1'
     compile 'com.makeramen:roundedimageview:2.2.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.twotoasters.jazzylistview:library:1.2.1'
     compile 'com.twotoasters.jazzylistview:library-recyclerview:1.2.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.shts:TriangleLabelView:1.1.2'
     provided 'javax.annotation:javax.annotation-api:1.2'
 }

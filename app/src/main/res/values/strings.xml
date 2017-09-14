@@ -2,4 +2,13 @@
     <string name="app_name">Dawanda</string>
     <string name="error_message">Sorry there was an error loading the items. Please try again later</string>
     <string name="category_section">Category Section</string>
+    <string name="image_description">Image description</string>
+    <string name="product_name">Product Name</string>
+    <string name="price">Price</string>
+    <string name="unique_view">This product is a one off</string>
+    <string name="add_to_basket">Add to Basket</string>
+    <string name="seller_name">Seller Name</string>
+    <string name="shop_name">Shop Name</string>
+    <string name="rating">Rating (%d) stars</string>
+    <string name="product_details">Product Details</string>
 </resources>

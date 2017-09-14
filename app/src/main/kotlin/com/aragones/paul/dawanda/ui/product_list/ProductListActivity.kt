@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.aragones.paul.dawanda.R
 import com.aragones.paul.dawanda.extension.gone
 import com.aragones.paul.dawanda.extension.visible
-import com.aragones.paul.dawanda.image.IImageLoader
+import com.aragones.paul.dawanda.image.ImageLoader
 import com.aragones.paul.dawanda.models.Product
 import com.aragones.paul.dawanda.ui.base.BaseActivity
 import com.aragones.paul.dawanda.ui.product_detail.ProductDetailActivity
@@ -23,7 +23,7 @@ class ProductListActivity : BaseActivity(), ProductListView {
     lateinit var presenter: ProductListPresenter
 
     @Inject
-    lateinit var imageLoader: IImageLoader
+    lateinit var imageLoader: ImageLoader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,12 +63,12 @@ class ProductListActivity : BaseActivity(), ProductListView {
     }
 
     private fun openProductDetailActivity(product: Product) {
-//        startActivity(ProductDetailActivity.intent(this, product))
+        startActivity(ProductDetailActivity.intent(this, product))
     }
 
     override fun displayError() {
-        Toast.makeText(this, R.string.error_message, Toast.LENGTH_LONG).show()
-        finish()
+        icon.visible()
+        errorMessage.visible()
     }
 
     override fun onDestroy() {

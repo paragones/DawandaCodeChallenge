@@ -2,6 +2,7 @@ package com.aragones.paul.dawanda.component
 
 import com.aragones.paul.dawanda.modules.*
 import com.aragones.paul.dawanda.ui.main.MainActivity
+import com.aragones.paul.dawanda.ui.product_detail.ProductDetailActivity
 import com.aragones.paul.dawanda.ui.product_list.ProductListActivity
 import dagger.Component
 import javax.inject.Singleton
@@ -16,4 +17,5 @@ import javax.inject.Singleton
 interface ActivitiesComponent {
     fun inject(activity: MainActivity)
     fun inject(activity: ProductListActivity)
+    fun inject(activity: ProductDetailActivity)
 }

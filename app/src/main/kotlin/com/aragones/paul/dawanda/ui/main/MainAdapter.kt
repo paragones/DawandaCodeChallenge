@@ -1,21 +1,19 @@
 package com.aragones.paul.dawanda.ui.main
 
-import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.aragones.paul.dawanda.R
-import com.aragones.paul.dawanda.image.IImageLoader
+import com.aragones.paul.dawanda.image.ImageLoader
 import com.aragones.paul.dawanda.models.Category
 
 
 class MainAdapter(private val categories: List<Category>,
-                  private val imageLoader: IImageLoader,
+                  private val imageLoader: ImageLoader,
                   private val openProductListActivity: (categoryId: Int, categoryName:String) -> Unit) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.ViewHolder {

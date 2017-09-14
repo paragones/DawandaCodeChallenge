@@ -1,6 +1,9 @@
 package com.aragones.paul.dawanda.models
 
-import android.net.Uri
+import android.os.Parcel
+import com.aragones.paul.dawanda.image.DefaultParcelable
+import com.aragones.paul.dawanda.image.read
+import com.aragones.paul.dawanda.image.write
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -27,4 +30,30 @@ data class Product(@SerializedName("id") val id: Long,
                    @SerializedName("default_image") val productImage: ProductImage,
                    @SerializedName("pinned") val pinned: Boolean,
                    @SerializedName("customizable") val customizable: Boolean,
-                   @SerializedName("campaigned") val campaigned: Boolean) : Serializable
+                   @SerializedName("campaigned") val campaigned: Boolean) : Serializable, DefaultParcelable {
+    override fun writeToParcel(dest: Parcel, flags: Int) {
+        dest.write(id,
+                categoryId,
+                slug,
+                unit,
+                title,
+                price,
+                undiscountedPrice,
+                basePrice,
+                badge,
+                salePercentage,
+                discounted,
+                soldInUnit,
+                seller,
+                shop,
+                productImage,
+                pinned,
+                customizable,
+                campaigned)
+    }
+
+    companion object {
+        @JvmField val CREATOR = DefaultParcelable.generateCreator { Product(it.read(), it.read(), it.read(), it.read(), it.read(), it.read(),
+                it.read(), it.read(), it.read(),it.read(), it.read(), it.read(), it.read(), it.read(), it.read(), it.read(), it.read(), it.read()) }
+    }
+}

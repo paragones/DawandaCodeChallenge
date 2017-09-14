@@ -1,7 +1,6 @@
 package com.aragones.paul.dawanda.ui.product_list
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +10,12 @@ import android.widget.TextView
 import com.aragones.paul.dawanda.R
 import com.aragones.paul.dawanda.extension.concatenateAlphaAnimations
 import com.aragones.paul.dawanda.extension.visible
-import com.aragones.paul.dawanda.image.IImageLoader
+import com.aragones.paul.dawanda.image.ImageLoader
 import com.aragones.paul.dawanda.models.Product
 import com.makeramen.roundedimageview.RoundedImageView
 
 class ProductAdapter(private val products: List<Product>,
-                     private val imageLoader: IImageLoader,
+                     private val imageLoader: ImageLoader,
                      private val openProductDetailActivity: (product: Product) -> Unit) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductAdapter.ViewHolder {
@@ -36,7 +35,7 @@ class ProductAdapter(private val products: List<Product>,
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.productTitle.text = products[position].title
-        holder.price.text = String.format("%d%c",(products[position].price.cents / 100),
+        holder.price.text = String.format("%d%c", (products[position].price.cents / 100),
                 products[position].price.symbol)
         imageLoader.loadInto(products[position].productImage.productL,
                 holder.productImage)
@@ -44,7 +43,6 @@ class ProductAdapter(private val products: List<Product>,
             openProductDetailActivity(products[position])
         }
         holder.sellerName.text = products[position].seller.username
-        Log.e(this.javaClass.simpleName, "products[position].seller.imageBaseUrl :" + products[position].seller.imageBaseUrl)
         imageLoader.loadInto(products[position].seller.imageBaseUrl,
                 holder.sellerImage)
         holder.sellerLayout.setOnClickListener {

@@ -6,7 +6,7 @@ import android.widget.Toast
 import com.aragones.paul.dawanda.R
 import com.aragones.paul.dawanda.extension.gone
 import com.aragones.paul.dawanda.extension.visible
-import com.aragones.paul.dawanda.image.IImageLoader
+import com.aragones.paul.dawanda.image.ImageLoader
 import com.aragones.paul.dawanda.models.Category
 import com.aragones.paul.dawanda.ui.base.BaseActivity
 import com.aragones.paul.dawanda.ui.product_list.ProductListActivity
@@ -20,7 +20,7 @@ class MainActivity : BaseActivity(), MainView {
     lateinit var presenter: MainPresenter
 
     @Inject
-    lateinit var imageLoader: IImageLoader
+    lateinit var imageLoader: ImageLoader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
