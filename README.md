@@ -1,9 +1,9 @@
-# DawandaCodeChallenge
-An Android Application for Dawanda Code Challenge
+# Online Shopping Sample
+An Android Application for online shopping sample
 
 <img src="/assets/sample.gif" width="49%">
 
-This project aims to solve the Dawanda Code Challenge. It is written in Kotlin. 
+This project aims to show a shopping sample. It is written in Kotlin. 
 
 Code Design and Architectural Solution
 
